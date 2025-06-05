@@ -1,0 +1,30 @@
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+target/
+
+# Maven
+log/
+*.log
+.settings/
+.project
+.classpath
+.mvn/
+!**/src/main/**/.keep
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+out/
+
+# Docker
+*.tar
+*.pid
+
+# Logs
+*.log
+logs/

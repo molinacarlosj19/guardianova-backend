@@ -1,0 +1,66 @@
+
+version: '3.8'
+
+services:
+  eureka-server:
+    build: ./guardianova-eureka-server
+    ports:
+      - "8761:8761"
+
+  api-gateway:
+    build: ./guardianova-api-gateway
+    ports:
+      - "8080:8080"
+    depends_on:
+      - eureka-server
+
+  auth-service:
+    build: ./auth-service
+    ports:
+      - "8081:8081"
+    depends_on:
+      - eureka-server
+
+  diagnosis-service:
+    build: ./diagnosis-service
+    ports:
+      - "8082:8082"
+    depends_on:
+      - eureka-server
+
+  legalbot-service:
+    build: ./legalbot-service
+    ports:
+      - "8083:8083"
+    depends_on:
+      - eureka-server
+
+  course-service:
+    build: ./course-service
+    ports:
+      - "8084:8084"
+    depends_on:
+      - eureka-server
+
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+
+  loki:
+    image: grafana/loki
+    ports:
+      - "3100:3100"
+
+  promtail:
+    image: grafana/promtail
+    volumes:
+      - ./promtail-config.yml:/etc/promtail/promtail.yml
+    command: -config.file=/etc/promtail/promtail.yml

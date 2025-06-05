@@ -1,0 +1,32 @@
+
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-package:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        service: [auth-service, diagnosis-service, legalbot-service, course-service]
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Build with Maven
+        run: mvn -B package -DskipTests --file ${{ matrix.service }}/pom.xml
+
+      - name: Build Docker image
+        run: docker build -t guardianova/${{ matrix.service }} ./${{ matrix.service }}
+
+      - name: Push Docker image (optional)
+        run: echo "Push logic here if using DockerHub or ECR"

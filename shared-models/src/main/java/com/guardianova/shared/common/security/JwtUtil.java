@@ -1,4 +1,4 @@
-package com.guardianova.auth.security;
+package com.guardianova.shared.common.security;
 
 import io.jsonwebtoken.*;
 import org.springframework.stereotype.Component;

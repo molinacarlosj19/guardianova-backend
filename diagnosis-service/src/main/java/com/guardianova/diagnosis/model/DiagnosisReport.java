@@ -10,8 +10,6 @@ public class DiagnosisReport {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private Long id;
     private Long userId;
     private LocalDate date;
     private Double riskScore;

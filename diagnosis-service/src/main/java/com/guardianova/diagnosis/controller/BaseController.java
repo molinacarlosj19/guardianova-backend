@@ -1,6 +1,7 @@
 package com.guardianova.diagnosis.controller;
 
-import org.springframework.stereotype.RestController;
+import org.springframework.web.bind.annotation.RestController;
+
 
 @RestController 
 public class BaseController {

@@ -1,5 +1,6 @@
-package com.guardianova.security;
+package com.guardianova.legalbot.security;
 
+import com.guardianova.shared.common.security.JwtUtil;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;

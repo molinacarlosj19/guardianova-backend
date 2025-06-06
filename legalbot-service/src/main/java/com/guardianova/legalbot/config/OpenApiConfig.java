@@ -1,4 +1,4 @@
-package com.guardianova.config;
+package com.guardianova.legalbot.config;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;

@@ -11,7 +11,6 @@ public class RiskAnswer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long id;
     private Long questionId;
     private Long userId;
     private String answerValue;

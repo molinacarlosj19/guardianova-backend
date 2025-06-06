@@ -10,8 +10,6 @@ public class DocumentVersion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private Long id;
     private Long documentId;
     private int versionNumber;
     private String content;

@@ -10,8 +10,6 @@ public class UserSettings {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private Long id;
     private Long userId;
     private String notificationPrefs;
     private Boolean complianceEmailOptIn;

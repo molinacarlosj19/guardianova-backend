@@ -1,4 +1,6 @@
-package com.guardianova.security;
+package com.guardianova.auth.security;
+
+import com.guardianova.shared.common.security.JwtUtil;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
